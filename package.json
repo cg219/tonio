@@ -1,0 +1,24 @@
+{
+  "name": "tonio",
+  "version": "1.0.0",
+  "description": "Artbymente Manager",
+  "main": "index.js",
+  "scripts": {
+    "main": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cg219/tonio.git"
+  },
+  "author": "Clemente Gomez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cg219/tonio/issues"
+  },
+  "homepage": "https://github.com/cg219/tonio#readme",
+  "dependencies": {
+    "electron": "^1.4.15",
+    "webpack": "^2.2.1"
+  }
+}
