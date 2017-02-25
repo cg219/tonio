@@ -4,7 +4,7 @@ const ExtractText = require('extract-text-webpack-plugin');
 module.exports = {
   entry: './src/js/index.js',
   output: {
-    filename: 'bundles.js',
+    filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
   },
   module: {
@@ -18,8 +18,11 @@ module.exports = {
               use: 'css-loader',
               fallback: 'vue-style-loader'
             }),
-            sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax',
-            scss: 'vue-style-loader!css-loader!sass-loader'
+            scss: ExtractText.extract({
+              use: 'css-loader!sass-loader',
+              fallback: 'vue-style-loader'
+            }),
+            sass: 'vue-style-loader!css-loader!sass-loader&indetendSyntax'
           }
         }
       }, 
@@ -32,5 +35,8 @@ module.exports = {
   },
   plugins: [
     new ExtractText('styles.css')
-  ]
+  ],
+  externals: {
+    async: 'commonjs async'
+  }
 }
