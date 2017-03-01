@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <img :src="url" alt="">
+  <div class="gallery-item">
+    <img class="gallery-item__image" :src="url" alt="">
   </div>
 </template>
 
@@ -12,12 +12,12 @@
   }
 </script>
 
-<style lang="scss" scoped>
-  div {
-    width: 20%;
-  }
+<style lang="scss">
+  .gallery-item {
+    flex: 0 1 50%;
 
-  img {
-    width: 100%;
+    &__image {
+      width: 100%;
+    }
   }
 </style>
